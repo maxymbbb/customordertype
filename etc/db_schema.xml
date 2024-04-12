@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="bonecki_customordertype_customordertype" resource="default" engine="innodb" comment="bonecki_customordertype_customordertype Table">
+		<column xsi:type="int" name="customordertype_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="customordertype_id"/>
+		</constraint>
+		<column name="custom_order_type" nullable="true" xsi:type="int" comment="custom_order_type" identity="false"/>
+		<column name="ex_order_id" nullable="true" xsi:type="int" comment="ex_order_id" identity="false"/>
+	</table>
+</schema>

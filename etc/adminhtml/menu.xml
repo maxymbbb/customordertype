@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Bonecki::top_level" title="Bonecki" module="Bonecki_CustomOrderType" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Bonecki_CustomOrderType::bonecki_customordertype_customordertype" title="CustomOrderType" module="Bonecki_CustomOrderType" sortOrder="9999" resource="Magento_Backend::content" parent="Bonecki::top_level" action="bonecki_customordertype/customordertype/index"/>
+	</menu>
+</config>

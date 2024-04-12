@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Bonecki_CustomOrderType::CustomOrderType" title="CustomOrderType" sortOrder="10">
+					<resource id="Bonecki_CustomOrderType::CustomOrderType_save" title="Save CustomOrderType" sortOrder="10"/>
+					<resource id="Bonecki_CustomOrderType::CustomOrderType_delete" title="Delete CustomOrderType" sortOrder="20"/>
+					<resource id="Bonecki_CustomOrderType::CustomOrderType_update" title="Update CustomOrderType" sortOrder="30"/>
+					<resource id="Bonecki_CustomOrderType::CustomOrderType_view" title="View CustomOrderType" sortOrder="40"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

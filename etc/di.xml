@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Bonecki\CustomOrderType\Api\CustomOrderTypeRepositoryInterface" type="Bonecki\CustomOrderType\Model\CustomOrderTypeRepository"/>
+	<preference for="Bonecki\CustomOrderType\Api\Data\CustomOrderTypeInterface" type="Bonecki\CustomOrderType\Model\CustomOrderType"/>
+	<preference for="Bonecki\CustomOrderType\Api\Data\CustomOrderTypeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Bonecki\CustomOrderType\Model\ResourceModel\CustomOrderType\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bonecki_customordertype_customordertype</argument>
+			<argument name="resourceModel" xsi:type="string">Bonecki\CustomOrderType\Model\ResourceModel\CustomOrderType\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="bonecki_customordertype_customordertype_listing_data_source" xsi:type="string">Bonecki\CustomOrderType\Model\ResourceModel\CustomOrderType\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+    <type name="Magento\Quote\Model\Quote\Address\ToOrderAddress">
+        <plugin name="bonecki_customordertypetoorderaddress"
+                type="Bonecki\CustomOrderType\Plugin\Quote\Model\Quote\Address\ToOrderAddress" sortOrder="10"/>
+    </type>
+
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="bonecki_customordertypeshippinginformationmanagement"
+                type="Bonecki\CustomOrderType\Plugin\Checkout\Model\ShippingInformationManagement" sortOrder="10"/>
+    </type>
+    <type name="Magento\Checkout\Model\PaymentInformationManagement">
+        <plugin name="bonecki_customordertypemodel_paymentinformationmanagement"
+                type="Bonecki\CustomOrderType\Plugin\Checkout\Model\PaymentInformationManagement" sortOrder="10"/>
+    </type>
+    <type name="Magento\Checkout\Model\GuestPaymentInformationManagement">
+        <plugin name="bonecki_customordertypemodel_guestpaymentinformationmanagement"
+                type="Bonecki\CustomOrderType\Plugin\Checkout\Model\GuestPaymentInformationManagement" sortOrder="10"/>
+    </type>
+</config>
